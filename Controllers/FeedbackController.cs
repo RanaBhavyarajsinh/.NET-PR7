@@ -8,7 +8,6 @@ namespace pr7.Controllers
     {
         private static List<Feedback> feedbackList = new List<Feedback>();
 
-        // First Page
         public ActionResult Index()
         {
             return View();
@@ -17,13 +16,18 @@ namespace pr7.Controllers
         // Give Feedback Page
         public ActionResult Create()
         {
-            return View();
+            return View(new Feedback());
         }
 
         // Submit Feedback
         [HttpPost]
         public ActionResult Create(Feedback feedback)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(feedback);
+            }
+
             feedback.Id = feedbackList.Count + 1;
             feedbackList.Add(feedback);
 

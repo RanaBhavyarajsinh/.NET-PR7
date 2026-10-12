@@ -3,6 +3,7 @@
 <div class="form-group">
     @Html.LabelFor(m => m.Name)
     @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
 </div>
 
 <br />
@@ -10,6 +11,7 @@
 <div class="form-group">
     @Html.LabelFor(m => m.Subject)
     @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
 </div>
 
 <br />
@@ -17,27 +19,33 @@
 <div class="form-group">
     @Html.LabelFor(m => m.EnrollmentNo)
     @Html.TextBoxFor(m => m.EnrollmentNo, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.EnrollmentNo, "", new { @class = "text-danger" })
 </div>
 
 <br />
 
 <div class="form-group">
     @Html.LabelFor(m => m.Rating)
+
     @Html.DropDownListFor(
         m => m.Rating,
         new SelectList(new[] { 1, 2, 3, 4, 5 }),
         "Select Rating",
         new { @class = "form-control" }
     )
+
+    @Html.ValidationMessageFor(m => m.Rating, "", new { @class = "text-danger" })
 </div>
 
 <br />
 
 <div class="form-group">
     @Html.LabelFor(m => m.Comment)
+
     @Html.TextAreaFor(
         m => m.Comment,
         new { @class = "form-control", rows = "5" }
     )
+
+    @Html.ValidationMessageFor(m => m.Comment, "", new { @class = "text-danger" })
 </div>
-```
