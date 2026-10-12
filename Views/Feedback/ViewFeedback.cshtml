@@ -1,0 +1,40 @@
+﻿@model IEnumerable<pr7.Models.Feedback>
+
+@{
+    ViewBag.Title = "View Feedback";
+}
+
+<h2>View Feedback</h2>
+
+<table class="table table-bordered"  style="border:6px solid black">
+
+    <tr>
+        <th style="border:3px solid black">Name</th>
+        <th style="border:3px solid black">Subject</th>
+        <th style="border:3px solid black">Enrollment No</th>
+        <th style="border:3px solid black">Rating</th>
+        <th style="border:3px solid black">Comment</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="border:3px solid black">@item.Name</td>
+            <td style="border:3px solid black">@item.Subject</td>
+            <td style="border:3px solid black">@item.EnrollmentNo</td>
+            <td style="border:3px solid black">@item.Rating</td>
+            <td style="border:3px solid black">@item.Comment</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+@Html.ActionLink(
+    "Back to Home",
+    "Index",
+    "Feedback",
+    null,
+    new { @class = "btn btn-primary" }
+)

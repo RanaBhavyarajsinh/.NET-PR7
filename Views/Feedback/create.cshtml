@@ -1,0 +1,26 @@
+﻿@model pr7.Models.Feedback
+
+@{
+    ViewBag.Title = "Give Feedback";
+}
+
+<h2>Give Feedback</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("_FeedbackForm", Model)
+
+    <br />
+
+    <input type="submit"
+           value="Submit Feedback"
+           class="btn btn-success" />
+
+    @Html.ActionLink(
+        "Back",
+        "Index",
+        "Feedback",
+        null,
+        new { @class = "btn btn-secondary" }
+    )
+}

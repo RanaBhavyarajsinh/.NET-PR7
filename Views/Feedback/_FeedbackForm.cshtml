@@ -1,0 +1,43 @@
+﻿@model pr7.Models.Feedback
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+</div>
+
+<br />
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Subject)
+    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+</div>
+
+<br />
+
+<div class="form-group">
+    @Html.LabelFor(m => m.EnrollmentNo)
+    @Html.TextBoxFor(m => m.EnrollmentNo, new { @class = "form-control" })
+</div>
+
+<br />
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Rating)
+    @Html.DropDownListFor(
+        m => m.Rating,
+        new SelectList(new[] { 1, 2, 3, 4, 5 }),
+        "Select Rating",
+        new { @class = "form-control" }
+    )
+</div>
+
+<br />
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Comment)
+    @Html.TextAreaFor(
+        m => m.Comment,
+        new { @class = "form-control", rows = "5" }
+    )
+</div>
+```

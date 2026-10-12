@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Feedback Management";
+}
+
+<h1>Feedback Management System</h1>
+
+<br />
+
+<p>
+    @Html.ActionLink(
+        "Give Feedback",
+        "Create",
+        "Feedback",
+        null,
+        new { @class = "btn btn-primary" }
+    )
+</p>
+
+<p>
+    @Html.ActionLink(
+        "View Feedback",
+        "ViewFeedback",
+        "Feedback",
+        null,
+        new { @class = "btn btn-success" }
+    )
+</p>
